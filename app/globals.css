@@ -1,0 +1,178 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Logo-matched colors - BRIGHT & FUN */
+  --background: #e8f7fc;
+  --foreground: #1a3a4a;
+  --card: #ffffff;
+  --card-foreground: #1a3a4a;
+  --popover: #ffffff;
+  --popover-foreground: #1a3a4a;
+  
+  /* Vibrant purple from logo text */
+  --primary: #7b4bb8;
+  --primary-foreground: #ffffff;
+  
+  /* Bright teal/cyan from logo DNA helix */
+  --secondary: #00c9e8;
+  --secondary-foreground: #ffffff;
+  
+  --muted: #e0f4fa;
+  --muted-foreground: #3a5a6a;
+  
+  /* Bright golden yellow from lightbulb icon */
+  --accent: #ffc82c;
+  --accent-foreground: #1a3a4a;
+  
+  /* Bright orange from figure icon */
+  --destructive: #ff6f45;
+  --destructive-foreground: #ffffff;
+  
+  --border: #b8e4ef;
+  --input: #d0edf5;
+  --ring: #00c9e8;
+  --radius: 0.625rem;
+  
+  /* Logo accent colors - BRIGHT versions */
+  --logo-teal: #00d4f0;
+  --logo-purple: #8855cc;
+  --logo-deep-purple: #9c5fd6;
+  --logo-yellow: #ffcc33;
+  --logo-orange: #ff7744;
+  --logo-green: #66dd66;
+  --logo-navy: #1a3a4a;
+}
+
+@theme inline {
+  --font-sans: var(--font-quicksand), 'Quicksand', sans-serif;
+  --font-display: var(--font-cherry-bomb), 'Cherry Bomb One', cursive;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom button active state */
+.btn-bounce:active {
+  transform: translateY(4px);
+  box-shadow: none !important;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-5deg); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 165, 196, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(0, 165, 196, 0.6); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 4s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Logo gradient text */
+.logo-gradient-text {
+  background: linear-gradient(135deg, var(--logo-teal) 0%, var(--logo-purple) 50%, var(--logo-deep-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effects */
+.card-fun:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 0 20px 40px rgba(74, 44, 122, 0.2);
+}
+
+/* Input focus glow */
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 4px rgba(0, 165, 196, 0.25);
+  border-color: var(--secondary) !important;
+}
+
+/* Logo-matched gradients */
+.gradient-teal-purple {
+  background: linear-gradient(135deg, var(--logo-teal) 0%, var(--logo-purple) 100%);
+}
+
+.gradient-purple-deep {
+  background: linear-gradient(135deg, var(--logo-purple) 0%, var(--logo-deep-purple) 100%);
+}
+
+.gradient-warm {
+  background: linear-gradient(135deg, var(--logo-yellow) 0%, var(--logo-orange) 100%);
+}
