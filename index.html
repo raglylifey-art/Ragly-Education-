@@ -52,15 +52,20 @@
 
         header {
             background: white;
-            padding: 40px 20px;
+            padding: 60px 20px;
             border-bottom: 10px solid var(--toy-red);
             text-align: center;
             border-radius: 0 0 50% 50% / 0 0 15% 15%;
         }
 
-        .header-logo {
-            max-width: 280px;
-            filter: drop-shadow(4px 4px 0px var(--woody-yellow));
+        /* NEW TEXT LOGO STYLE */
+        .text-logo {
+            font-family: var(--bubbly-font);
+            font-size: 3.5rem;
+            color: var(--logo-purple);
+            margin: 0;
+            text-shadow: 4px 4px 0px var(--woody-yellow);
+            line-height: 1;
         }
 
         h2 { font-family: var(--bubbly-font); font-size: 2.5rem; color: var(--logo-purple); text-align: center; }
@@ -141,7 +146,8 @@
     </nav>
 
     <header>
-        <img src="346.png" alt="Ragly Logo" class="header-logo">
+        <h1 class="text-logo">Ragly<br>Education Center</h1>
+        <p style="color: var(--logo-teal); font-weight: bold; margin-top: 10px;">To Infinity and Beyond in Learning!</p>
     </header>
 
     <div class="container">
