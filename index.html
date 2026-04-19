@@ -99,5 +99,176 @@
             font-family: var(--bubbly-font); 
             font-size: 2.8rem; 
             text-align: center; 
-            color: var(--alien
-                       
+            color: var(--alien-teal);
+            margin-bottom: 40px;
+        }
+
+        /* STICKER CARDS */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            padding: 40px;
+            border-radius: 40px;
+            border: 6px dashed #eee;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .card:hover { 
+            transform: translateY(-10px) rotate(-2deg);
+            border-color: var(--woody-red);
+        }
+
+        /* FORMS */
+        .form-section {
+            background: #fdfdfd;
+            padding: 40px;
+            border-radius: 50px;
+            border: 8px solid;
+            margin-top: 40px;
+        }
+
+        .enroll-box { border-color: var(--buzz-purple); background: #f9f4ff; }
+        .career-box { border-color: var(--rex-green); background: #f4fff7; }
+
+        label { display: block; margin: 20px 0 8px; font-weight: bold; font-size: 1.1rem; }
+        input, select, textarea {
+            width: 100%; padding: 18px; border-radius: 25px; border: 3px solid #eee;
+            font-size: 1.1rem; box-sizing: border-box; outline: none;
+        }
+
+        .submit-btn {
+            font-family: var(--bubbly-font);
+            font-size: 2rem;
+            color: white;
+            border: none;
+            padding: 20px;
+            border-radius: 100px;
+            width: 100%;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-purple { background: var(--buzz-purple); box-shadow: 0 10px 0 #4a1d6a; }
+        .btn-green { background: var(--rex-green); box-shadow: 0 10px 0 #219150; }
+
+        .submit-btn:active { transform: translateY(6px); box-shadow: 0 4px 0 #333; }
+
+        footer {
+            background: var(--buzz-purple);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 10px solid var(--toy-yellow);
+        }
+
+        .contact-pill {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 40px;
+            display: inline-block;
+            border: 3px dashed var(--toy-yellow);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#about" class="nav-1">ADVENTURE</a>
+        <a href="#enroll" class="nav-2">ENROLL</a>
+        <a href="#careers" class="nav-3">CAREERS</a>
+    </nav>
+
+    <header>
+        <h1 class="hero-title">Ragly<br>Education Center</h1>
+        <p style="font-size: 1.5rem; font-weight: bold; color: var(--alien-teal);">Empowering Every Child to Learn, Play, and Grow!</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>⭐ Why Join The Fun? ⭐</h2>
+            <div class="grid">
+                <div class="card" style="border-color: var(--alien-teal);">
+                    <h1 style="font-size: 4rem; margin:0;">🎨</h1>
+                    <h3>Creative Play</h3>
+                    <p>Immersive themed rooms like our Vet Station and Construction Zone!</p>
+                </div>
+                <div class="card" style="border-color: var(--woody-red);">
+                    <h1 style="font-size: 4rem; margin:0;">🛡️</h1>
+                    <h3>Safe Space</h3>
+                    <p>Missouri-certified care with a focus on safety and security.</p>
+                </div>
+                <div class="card" style="border-color: var(--rex-green);">
+                    <h1 style="font-size: 4rem; margin:0;">🚀</h1>
+                    <h3>Growth</h3>
+                    <p>CDA-trained staff helping your child reach infinity and beyond!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="enroll">
+            <h2 style="color: var(--buzz-purple);">🚀 Start Your Journey</h2>
+            <div class="form-section enroll-box">
+                <form action="mailto:FransotaS.RaglyEducation@Gmail.com" method="post" enctype="text/plain">
+                    <label>Child's Full Name</label>
+                    <input type="text" name="Child_Name" required>
+                    
+                    <label>Child's Age</label>
+                    <select name="Age">
+                        <option>Infant</option>
+                        <option>Toddler</option>
+                        <option>School Age (Before/After Care)</option>
+                    </select>
+
+                    <label>Parent/Guardian Contact</label>
+                    <input type="text" name="Parent_Contact" required placeholder="Phone Number">
+
+                    <button type="submit" class="submit-btn btn-purple">SEND ENROLLMENT REQUEST</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="careers">
+            <h2 style="color: var(--rex-green);">🦖 Join Our Team!</h2>
+            <div class="form-section career-box">
+                <p style="text-align: center; font-weight: bold;">We are looking for passionate educators to join our family!</p>
+                <form action="mailto:FransotaS.RaglyEducation@Gmail.com" method="post" enctype="text/plain">
+                    <label>Your Full Name</label>
+                    <input type="text" name="Applicant_Name" required>
+                    
+                    <label>Position Interested In</label>
+                    <select name="Job_Title">
+                        <option>Lead Teacher</option>
+                        <option>Assistant Teacher</option>
+                        <option>Support Staff</option>
+                    </select>
+
+                    <label>Tell us about your experience!</label>
+                    <textarea name="Experience" rows="4"></textarea>
+
+                    <button type="submit" class="submit-btn btn-green">SUBMIT JOB APPLICATION</button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <h1 style="font-family: var(--bubbly-font); font-size: 3rem; color: var(--toy-yellow);">Visit Us Today!</h1>
+        <div class="contact-pill">
+            <p style="font-size: 1.4rem;"><strong>Director:</strong> Fransota Swopes</p>
+            <p style="font-size: 1.4rem;"><strong>Call/Text:</strong> (618) 600-5012</p>
+            <p style="font-size: 1.4rem;"><strong>Email:</strong> FransotaS.RaglyEducation@Gmail.com</p>
+        </div>
+        <p style="margin-top: 40px; opacity: 0.7;">© 2026 Ragly Education Center | Bridgeton, MO</p>
+    </footer>
+
+</body>
+</html>
